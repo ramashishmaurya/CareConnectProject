@@ -20,7 +20,7 @@ from django.urls import path ,include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("task/" ,include('users.urls')) ,
-    path('person/' ,include('users.urls')) ,
-    path('api/v1',include('api.urls')) ,
+    path("" ,include('users.urls')) ,
 ]
+
+# this is what i means to make sure this login pages and fundamental as 

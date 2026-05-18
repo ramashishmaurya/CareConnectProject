@@ -8,5 +8,8 @@ def home(request):
     return HttpResponse('hello worlds')
 
 urlpatterns = [
-    path('' ,views.person)  ,  # this is function is called here rediret with the otherwebsite as well like u should go on this this is what mean here likr    
-]
+    path('person/' ,views.person)  , 
+    path('tweets/' ,views.tweets   , name='tweets') ,
+    path('footer/' ,views.footer ,name='footer') , 
+    path('login/' ,views.login  , name='login') , 
+] 

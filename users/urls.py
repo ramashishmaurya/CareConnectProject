@@ -12,4 +12,5 @@ urlpatterns = [
     path('tweets/' ,views.tweets   , name='tweets') ,
     path('footer/' ,views.footer ,name='footer') , 
     path('login/' ,views.login  , name='login') , 
+    path('chat/' ,views.chat , name='chat') , 
 ] 

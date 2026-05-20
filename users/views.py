@@ -20,7 +20,7 @@ def chat(request):
     return render(request ,'chat.html')
 
 def tweets_list(request):
-    tweets = tweets.objects.all().order_by('-created_at')
+    tweets = tweets.objects.all().order_by('-created_at')  
     return render(request  , 'tweets_list.html' , {'tweets':tweets})
 
 def tweets_create(request):
@@ -58,5 +58,4 @@ def tweets_delete(request , tweets_id):
         tweet.delete()
         return redirect('tweets_list')
     return render(request , 'tweet_confirm_delete.html' ,{'form':tweet})
-
 

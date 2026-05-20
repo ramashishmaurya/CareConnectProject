@@ -1,11 +1,31 @@
-{% block content %}
-<h1> this is djnago playlist </h1>''
+{% extends "layout.html" %}
 
-<a class="btn - btn-promary" href ="{% url 'tweet_create' %}"
+{% block title %}
+tweets post system right 
+{% endblock title %}
 
-<div clas='container row  gap-3'>
-   {% for tweet in tweets  %}{% endfor %}
+{% block content  %}
+<h1 class='text-center mt-4'> Learning the django right </h1> 
+<!-- thi is one create the btn class here  -->
+
+<a class="btn btn-primary" href=" {% url 'tweets_create' %}">create a tweets</a>
+<div class="container row gap-3">
+
+   {% for tweet in tweets  %}
+
+   <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{tweet.photo.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{tweet.user.username}}</h5>
+        <p class="card-text">{{tweet.text}}</p>
+
+        <a href="{% url 'tweets_edit' %}" class="btn btn-primary">Edit button</a>
+        <a href="{% url 'tweets_delete'  tweets_id %}" class='btn btn-danger'>delete </a>
+      </div>
+    </div>
+   {% endfor %}
+
 </div>
 
-{% endblock content %}
+{% endblock content  %} 
 
